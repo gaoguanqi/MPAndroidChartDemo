@@ -5,11 +5,10 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.maple.smaple.mpandroidchartdemo.candlestickchart.CandleStickChartActivity">
+    tools:context="com.maple.smaple.mpandroidchartdemo.kchart.KChartActivity">
     <include layout="@layout/layout_title_bar"/>
-    <com.github.mikephil.charting.charts.CandleStickChart
-        android:id="@+id/candler_chart"
+    <com.github.mikephil.charting.charts.BarChart
+        android:id="@+id/bar_chart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
-
+        android:layout_height="260dp"/>
 </LinearLayout>

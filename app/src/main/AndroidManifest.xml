@@ -26,7 +26,8 @@
         <activity android:name=".candlestickchart.CandleStickChartActivity" />
         <activity android:name=".bubblechart.BubbleChartActivity" />
         <activity android:name=".radarchart.RadarChartActivity" />
-        <activity android:name=".login.LoginActivity"></activity>
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".kchart.KChartActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ import com.maple.smaple.mpandroidchartdemo.base.BaseActivity;
 import com.maple.smaple.mpandroidchartdemo.bubblechart.BubbleChartActivity;
 import com.maple.smaple.mpandroidchartdemo.candlestickchart.CandleStickChartActivity;
 import com.maple.smaple.mpandroidchartdemo.combinedchart.CombinedChartActivity;
+import com.maple.smaple.mpandroidchartdemo.kchart.KChartActivity;
 import com.maple.smaple.mpandroidchartdemo.linechart.LineChartActivity;
 import com.maple.smaple.mpandroidchartdemo.login.LoginActivity;
 import com.maple.smaple.mpandroidchartdemo.piechart.PieChartActivity;
@@ -49,7 +50,16 @@ public class MainActivity extends BaseActivity {
          8. 网状图 RadarChart
      * @param view
      */
-    @OnClick({R.id.btn_lineChart, R.id.btn_barChart, R.id.btn_combinedChart, R.id.btn_pieChart, R.id.btn_scatterChart, R.id.btn_candleStickChart, R.id.btn_bubbleChart, R.id.btn_radarChart,R.id.btn_login})
+    @OnClick({R.id.btn_lineChart,
+            R.id.btn_barChart,
+            R.id.btn_combinedChart,
+            R.id.btn_pieChart,
+            R.id.btn_scatterChart,
+            R.id.btn_candleStickChart,
+            R.id.btn_bubbleChart,
+            R.id.btn_radarChart,
+            R.id.btn_login,
+            R.id.btn_kChart})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.btn_lineChart:
@@ -76,6 +86,11 @@ public class MainActivity extends BaseActivity {
             case R.id.btn_login:
                 startActivity(new Intent(this, LoginActivity.class));
                 break;
+            case R.id.btn_kChart:
+                startActivity(new Intent(this, KChartActivity.class));
+                break;
+             default:
+                 break;
         }
     }
 }
