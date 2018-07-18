@@ -1,42 +1,23 @@
 package com.maple.smaple.mpandroidchartdemo.linechart;
 
-import android.support.v7.app.AppCompatActivity;
+import android.graphics.Color;
 import android.os.Bundle;
-import android.widget.Toast;
 
 import com.github.mikephil.charting.charts.LineChart;
-import com.github.mikephil.charting.components.Description;
-import com.github.mikephil.charting.data.Entry;
-import com.github.mikephil.charting.data.LineData;
-import com.github.mikephil.charting.data.LineDataSet;
-import com.github.mikephil.charting.highlight.Highlight;
-import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
-import com.github.mikephil.charting.listener.OnChartValueSelectedListener;
 import com.maple.smaple.mpandroidchartdemo.R;
 import com.maple.smaple.mpandroidchartdemo.base.BaseActivity;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import butterknife.BindView;
 
+/**
+ * @Author: Gao
+ * @Time: 2018/7/18 10:32
+ * @Description: 功能描述
+ * https://blog.csdn.net/qq_26787115/article/details/53185657
+ */
 public class LineChartActivity extends BaseActivity {
-
     @BindView(R.id.lineChart)
     LineChart lineChart;
-
-    List<String> xLists;
-    List<Entry> values;
-
-
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        Description mDescription = new Description();
-        mDescription.setText("线性统计图");
-        lineChart.setDescription(mDescription);
-
-    }
 
     @Override
     protected int setLayoutId() {
@@ -45,9 +26,25 @@ public class LineChartActivity extends BaseActivity {
 
     @Override
     protected void initTitle() {
-        setTitleBack();
+
     }
 
+    @Override
+    protected void initData(Bundle savedInstanceState) {
+        lineChart.getLegend().setEnabled(false);// 不显示图例
+        lineChart.getDescription().setEnabled(false);// 不显示描述
+        lineChart.setScaleEnabled(false);   // 取消缩放
+        lineChart.setNoDataText("暂无数据");// 没有数据的时候默认显示的文字
+        lineChart.setNoDataTextColor(Color.GRAY);
+        lineChart.setBorderColor(Color.BLUE);
+        lineChart.setTouchEnabled(true);
+        lineChart.setDragEnabled(true);
+        // 如果x轴label文字比较大，可以设置边距
+        lineChart.setExtraRightOffset(25f);
+        lineChart.setExtraBottomOffset(10f);
+        lineChart.setExtraTopOffset(10f);
 
 
+
+    }
 }

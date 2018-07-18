@@ -17,53 +17,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="折线图" />
-        <Button
-            android:id="@+id/btn_barChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="条形图" />
-        <Button
-            android:id="@+id/btn_combinedChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="条形折线图" />
-        <Button
-            android:id="@+id/btn_pieChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="圆饼图" />
-        <Button
-            android:id="@+id/btn_scatterChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="雷达图" />
-        <Button
-            android:id="@+id/btn_candleStickChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="K线图" />
-        <Button
-            android:id="@+id/btn_bubbleChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="泡泡图" />
-        <Button
-            android:id="@+id/btn_radarChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="网状图" />
-
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="登陆" />
-
-        <Button
-            android:id="@+id/btn_kChart"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="imtoken_K_线图" />
     </LinearLayout>
 
 

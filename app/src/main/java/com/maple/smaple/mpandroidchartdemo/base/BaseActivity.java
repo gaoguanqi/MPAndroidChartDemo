@@ -1,11 +1,13 @@
 package com.maple.smaple.mpandroidchartdemo.base;
 
 import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.view.inputmethod.InputMethodManager;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
@@ -28,29 +30,37 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(setLayoutId());
-
         //绑定控件
         unbinder = ButterKnife.bind(this);
         //初始化沉浸式
         if (isImmersionBarEnabled())
             initImmersionBar();
-
+        initData(savedInstanceState);
         initTitle();
+
     }
     protected abstract int setLayoutId();
 
     protected abstract void initTitle();
 
+    protected abstract void initData(Bundle savedInstanceState);
+
     protected  void setTitleBack() {
-        LinearLayout ll = findViewById(R.id.ll_title_left);
-        TextView title = findViewById(R.id.tv_title);
-        title.setText(this.getClass().getSimpleName());
-        ll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                finish();
-            }
+
+
+
+        ImageView ivLeft = findViewById(R.id.iv_titlebar_left);
+        TextView tvLeft = findViewById(R.id.tv_titlebar_left);
+        TextView tvTitle = findViewById(R.id.tv_titlebar_title);
+        ImageView ivRight = findViewById(R.id.iv_titlebar_right);
+        TextView tvRight = findViewById(R.id.tv_titlebar_right);
+
+        tvTitle.setText(this.getClass().getSimpleName());
+
+        ivLeft.setOnClickListener(view -> {
+            this.finish();
         });
+
     }
 
     protected void initImmersionBar() {
