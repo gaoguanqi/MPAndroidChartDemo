@@ -21,11 +21,6 @@ public class SaveSateActivity extends BaseActivity {
     }
 
     @Override
-    protected void initTitle() {
-
-    }
-
-    @Override
     protected void initData(Bundle savedInstanceState) {
         if(savedInstanceState != null){
             String abc = savedInstanceState.getString("key");

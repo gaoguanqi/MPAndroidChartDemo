@@ -42,13 +42,10 @@ public class GridViewActivity extends BaseActivity {
         return R.layout.activity_grid_view;
     }
 
-    @Override
-    protected void initTitle() {
-
-    }
 
     @Override
     protected void initData(Bundle savedInstanceState) {
+        setTitleBack();
         mAdapter = new GridAdapter(this);
         GridLayoutManager layoutManager = new GridLayoutManager(this, 4);
         //LinearLayoutManager layoutManager = new LinearLayoutManager(this);

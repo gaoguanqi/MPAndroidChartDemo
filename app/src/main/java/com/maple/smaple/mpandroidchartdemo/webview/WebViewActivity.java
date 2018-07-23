@@ -24,9 +24,6 @@ public class WebViewActivity extends BaseActivity {
         return R.layout.activity_web_view;
     }
 
-    @Override
-    protected void initTitle() {
-    }
 
     @Override
     protected void initData(Bundle savedInstanceState) {

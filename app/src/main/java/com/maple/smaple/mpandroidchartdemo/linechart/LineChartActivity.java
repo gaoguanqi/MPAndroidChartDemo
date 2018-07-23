@@ -36,10 +36,6 @@ public class LineChartActivity extends BaseActivity {
         return R.layout.activity_line_chart;
     }
 
-    @Override
-    protected void initTitle() {
-
-    }
 
     @Override
     protected void initData(Bundle savedInstanceState) {

@@ -24,7 +24,7 @@ import io.reactivex.disposables.Disposable;
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
-    public CompositeDisposable mCompositeDisposable;
+    protected CompositeDisposable mCompositeDisposable;
     private InputMethodManager mImm;
     protected ImmersionBar mImmersionBar;
     private Unbinder mUnbinder;
@@ -41,12 +41,9 @@ public abstract class BaseActivity extends AppCompatActivity {
         if (isImmersionBarEnabled())
             initImmersionBar();
         initData(savedInstanceState);
-        initTitle();
-
     }
     protected abstract int setLayoutId();
 
-    protected abstract void initTitle();
 
     protected abstract void initData(Bundle savedInstanceState);
 

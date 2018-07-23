@@ -21,7 +21,7 @@ public class MainActivity extends BaseActivity {
 
     @Override
     protected void initData(Bundle savedInstanceState) {
-
+        setTitleBack();
 
     }
 
@@ -30,10 +30,6 @@ public class MainActivity extends BaseActivity {
         super.onSaveInstanceState(outState);
     }
 
-    @Override
-    protected void initTitle() {
-        setTitleBack();
-    }
 
 
     @OnClick({R.id.btn_lineChart,R.id.btn_savestate,R.id.btn_webview,R.id.btn_gridView})
