@@ -25,9 +25,9 @@ import io.reactivex.disposables.Disposable;
 
 public abstract class BaseActivity extends AppCompatActivity {
     public CompositeDisposable mCompositeDisposable;
-    private InputMethodManager imm;
+    private InputMethodManager mImm;
     protected ImmersionBar mImmersionBar;
-    private Unbinder unbinder;
+    private Unbinder mUnbinder;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -35,7 +35,7 @@ public abstract class BaseActivity extends AppCompatActivity {
 
         setContentView(setLayoutId());
         //绑定控件
-        unbinder = ButterKnife.bind(this);
+        mUnbinder = ButterKnife.bind(this);
         mCompositeDisposable = new CompositeDisposable();
         //初始化沉浸式
         if (isImmersionBarEnabled())
@@ -118,11 +118,11 @@ public abstract class BaseActivity extends AppCompatActivity {
 
     public void hideSoftKeyBoard() {
         View localView = getCurrentFocus();
-        if (this.imm == null) {
-            this.imm = ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE));
+        if (this.mImm == null) {
+            this.mImm = ((InputMethodManager) getSystemService(Context.INPUT_METHOD_SERVICE));
         }
-        if ((localView != null) && (this.imm != null)) {
-            this.imm.hideSoftInputFromWindow(localView.getWindowToken(), 2);
+        if ((localView != null) && (this.mImm != null)) {
+            this.mImm.hideSoftInputFromWindow(localView.getWindowToken(), 2);
         }
     }
 
@@ -130,8 +130,8 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected void onDestroy() {
         super.onDestroy();
         clearDisposable();
-        unbinder.unbind();
-        this.imm = null;
+        mUnbinder.unbind();
+        this.mImm = null;
         if (mImmersionBar != null)
             mImmersionBar.destroy();  //在BaseActivity里销毁
     }
