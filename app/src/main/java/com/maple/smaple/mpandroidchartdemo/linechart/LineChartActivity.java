@@ -1,11 +1,9 @@
 package com.maple.smaple.mpandroidchartdemo.linechart;
 
 import android.graphics.Color;
-import android.graphics.Typeface;
 import android.os.Bundle;
-import android.view.Gravity;
+import android.widget.TextView;
 
-import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.LimitLine;
 import com.github.mikephil.charting.components.XAxis;
 import com.github.mikephil.charting.components.YAxis;
@@ -13,11 +11,10 @@ import com.github.mikephil.charting.data.Entry;
 import com.github.mikephil.charting.data.LineData;
 import com.github.mikephil.charting.data.LineDataSet;
 import com.github.mikephil.charting.interfaces.datasets.ILineDataSet;
+import com.github.mikephil.charting.utils.Utils;
 import com.maple.smaple.mpandroidchartdemo.R;
 import com.maple.smaple.mpandroidchartdemo.base.BaseActivity;
-import com.maple.smaple.mpandroidchartdemo.toast.MyToast;
 
-import java.math.BigDecimal;
 import java.util.ArrayList;
 
 import butterknife.BindView;
@@ -30,8 +27,9 @@ import butterknife.BindView;
  */
 public class LineChartActivity extends BaseActivity {
     @BindView(R.id.lineChart)
-    LineChart mChart;
+    MyLineChart mChart;
     private LineData data;
+    TextView textView;
 
     @Override
     protected int setLayoutId() {
@@ -79,20 +77,12 @@ public class LineChartActivity extends BaseActivity {
         YAxis yAxisRight = mChart.getAxisRight();
         yAxisRight.setEnabled(false);
         YAxis yAxisLeft = mChart.getAxisLeft();
+        //y轴最大
+        yAxisRight.setAxisMaximum(100f);
+        //y轴最小
+        yAxisRight.setAxisMinimum(80f);
         yAxisLeft.addLimitLine(ll1);
         init();
-
-        //创建Toast
-        MyToast  myToast = new MyToast.Builder(this)
-                .setMessage("自定义Toast效果！")//设置提示文字
-                .setBackgroundColor(0xe9ff4587)//设置背景颜色
-                .setGravity(Gravity.CENTER)//设置吐司位置
-                .showIcon(true)//是否显示图标
-                .build();//创建吐司
-
-        myToast.show();
-
-
     }
 
     private void init() {
@@ -120,6 +110,16 @@ public class LineChartActivity extends BaseActivity {
         set1.setDrawFilled(true);//设置包括的范围区域填充颜色
         set1.setCircleColor(Color.rgb(244, 117, 117));
         set1.setColor(Color.rgb(244, 117, 117));
+
+        if (Utils.getSDKInt() >= 18) {
+            // 填充背景只支持18以上
+            //Drawable drawable = ContextCompat.getDrawable(this, R.mipmap.ic_launcher);
+            //set1.setFillDrawable(drawable);
+            set1.setFillColor(Color.GREEN);
+        } else {
+            set1.setFillColor(Color.GREEN);
+        }
+
         ArrayList<ILineDataSet> dataSets = new ArrayList<ILineDataSet>();
         dataSets.add(set1); // add the datasets
 

@@ -16,12 +16,15 @@ import com.maple.smaple.mpandroidchartdemo.R;
 
 import butterknife.ButterKnife;
 import butterknife.Unbinder;
+import io.reactivex.disposables.CompositeDisposable;
+import io.reactivex.disposables.Disposable;
 
 /**
  * Created by gaogu on 2018/1/8.
  */
 
 public abstract class BaseActivity extends AppCompatActivity {
+    public CompositeDisposable mCompositeDisposable;
     private InputMethodManager imm;
     protected ImmersionBar mImmersionBar;
     private Unbinder unbinder;
@@ -29,9 +32,11 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         setContentView(setLayoutId());
         //绑定控件
         unbinder = ButterKnife.bind(this);
+        mCompositeDisposable = new CompositeDisposable();
         //初始化沉浸式
         if (isImmersionBarEnabled())
             initImmersionBar();
@@ -44,6 +49,26 @@ public abstract class BaseActivity extends AppCompatActivity {
     protected abstract void initTitle();
 
     protected abstract void initData(Bundle savedInstanceState);
+
+
+    /**
+     * 添加订阅
+     */
+    public void addDisposable(Disposable mDisposable) {
+        if (mCompositeDisposable == null) {
+            mCompositeDisposable = new CompositeDisposable();
+        }
+        mCompositeDisposable.add(mDisposable);
+    }
+
+    /**
+     * 取消所有订阅
+     */
+    public void clearDisposable() {
+        if (mCompositeDisposable != null) {
+            mCompositeDisposable.clear();
+        }
+    }
 
     protected  void setTitleBack() {
 
@@ -104,6 +129,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        clearDisposable();
         unbinder.unbind();
         this.imm = null;
         if (mImmersionBar != null)

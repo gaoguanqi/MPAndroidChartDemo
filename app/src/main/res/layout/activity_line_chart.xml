@@ -29,7 +29,7 @@
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
             >
-            <com.github.mikephil.charting.charts.LineChart
+            <com.maple.smaple.mpandroidchartdemo.linechart.MyLineChart
                 android:id="@+id/lineChart"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"/>

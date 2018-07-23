@@ -20,8 +20,10 @@ ext {
 
             barlibraryVersion: "2.3.0",
             mpandroidChartVersion: "v3.0.3",
+            recyclerviewAnimatorsVersion: "2.3.0",
 
             butterknifeVersion: "8.8.1",
+            rxbinding: "2.1.1",
 
 
     ]
@@ -38,6 +40,7 @@ ext {
             "utilcode"                  : "com.blankj:utilcode:${version["utilcodeVersion"]}",
             "barlibrary"                : "com.gyf.barlibrary:barlibrary:${version["barlibraryVersion"]}",
             "MPAndroidChart"            : "com.github.PhilJay:MPAndroidChart:${version["mpandroidChartVersion"]}",
+            "recyclerview-animators"    : "jp.wasabeef:recyclerview-animators:${version["recyclerviewAnimatorsVersion"]}",
 
             "butterknife"               : "com.jakewharton:butterknife:${version["butterknifeVersion"]}",
             "butterknife-compiler"      : "com.jakewharton:butterknife-compiler:${version["butterknifeVersion"]}",
@@ -46,6 +49,9 @@ ext {
             "rxandroid2"                : "io.reactivex.rxjava2:rxandroid:${version["rxandroid2Version"]}",
             "rxjava2"                   : "io.reactivex.rxjava2:rxjava:${version["rxjava2Version"]}",
 
+            "rxbinding"                : "com.jakewharton.rxbinding2:rxbinding:${version["rxbinding"]}",
+            "rxbinding-v4"             : "com.jakewharton.rxbinding2:rxbinding-support-v4:${version["rxbinding"]}",
+            "rxbinding-v7"             : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${version["rxbinding"]}",
 
     ]
 }

@@ -25,6 +25,7 @@ android {
 
 dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation 'com.android.support.constraint:constraint-layout:1.1.2'
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'com.android.support.test:runner:1.0.2'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
@@ -38,10 +39,17 @@ dependencies {
     //https://github.com/gyf-dev/ImmersionBar
     implementation rootProject.ext.dependencies["barlibrary"]
     implementation rootProject.ext.dependencies["MPAndroidChart"]
+    implementation rootProject.ext.dependencies["recyclerview-animators"]
 
     //butterknife
     implementation rootProject.ext.dependencies["butterknife"]
     annotationProcessor rootProject.ext.dependencies["butterknife-compiler"]
+
+    //Rx2
+    implementation rootProject.ext.dependencies["rxandroid2"]
+    implementation rootProject.ext.dependencies["rxjava2"]
+
+    implementation rootProject.ext.dependencies["rxbinding"]
 
 
 }
