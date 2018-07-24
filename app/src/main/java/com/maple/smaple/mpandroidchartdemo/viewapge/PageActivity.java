@@ -39,7 +39,7 @@ public class PageActivity extends BaseActivity {
     protected void initData(Bundle savedInstanceState) {
         mLists = new ArrayList<>();
         Random random = new Random();
-        for (int i = 0; i < 5; i++) {
+        for (int i = 0; i < 3; i++) {
             View view = new View(this);
             view.setBackgroundColor(0xff000000 | random.nextInt(0x00ffffff));
             mLists.add(view);
@@ -48,15 +48,15 @@ public class PageActivity extends BaseActivity {
         vp.setAdapter(new MyPagerAdapter(mLists));
         indicator.setViewPager(vp);
 
-        Observable.interval(1,TimeUnit.SECONDS)  // 5s的延迟，5s的循环时间
+        Observable.interval(3,TimeUnit.SECONDS)
                 .subscribeOn(AndroidSchedulers.mainThread())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(l->{
                     mCurrentPage++;
-                    vp.setCurrentItem(mCurrentPage);
-                    if(mCurrentPage == mLists.size()-1){
+                    if(mCurrentPage == mLists.size()){
                         mCurrentPage = 0;
                     }
+                    vp.setCurrentItem(mCurrentPage);
                 });
     }
 }
