@@ -23,7 +23,9 @@ ext {
             recyclerviewAnimatorsVersion: "2.3.0",
 
             butterknifeVersion: "8.8.1",
-            rxbinding: "2.1.1",
+            rxbindingVersion: "2.1.1",
+
+            dagger2Version: "2.16",
 
 
     ]
@@ -49,9 +51,12 @@ ext {
             "rxandroid2"                : "io.reactivex.rxjava2:rxandroid:${version["rxandroid2Version"]}",
             "rxjava2"                   : "io.reactivex.rxjava2:rxjava:${version["rxjava2Version"]}",
 
-            "rxbinding"                : "com.jakewharton.rxbinding2:rxbinding:${version["rxbinding"]}",
-            "rxbinding-v4"             : "com.jakewharton.rxbinding2:rxbinding-support-v4:${version["rxbinding"]}",
-            "rxbinding-v7"             : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${version["rxbinding"]}",
+            "rxbinding"                : "com.jakewharton.rxbinding2:rxbinding:${version["rxbindingVersion"]}",
+            "rxbinding-v4"             : "com.jakewharton.rxbinding2:rxbinding-support-v4:${version["rxbindingVersion"]}",
+            "rxbinding-v7"             : "com.jakewharton.rxbinding2:rxbinding-appcompat-v7:${version["rxbindingVersion"]}",
+            //dagger2
+            "dagger2"                    : "com.google.dagger:dagger:${version["dagger2Version"]}",
+            "dagger2-compiler"           : "com.google.dagger:dagger-compiler:${version["dagger2Version"]}",
 
     ]
 }
