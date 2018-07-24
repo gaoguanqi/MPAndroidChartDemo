@@ -23,7 +23,9 @@
         <activity android:name=".savestate.SaveSateActivity" />
         <activity android:name=".gridlayout.GridViewActivity" />
         <activity android:name=".webview.WebViewActivity" />
-        <activity android:name=".progress.ProgressActivity"></activity>
+        <activity android:name=".progress.ProgressActivity" />
+        <activity android:name=".nbbutton.MyFirstActivity" />
+        <activity android:name=".nbbutton.MyScondActivity"></activity>
     </application>
 
 </manifest>
