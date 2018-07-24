@@ -22,7 +22,8 @@
         <activity android:name=".linechart.LineChartActivity" />
         <activity android:name=".savestate.SaveSateActivity" />
         <activity android:name=".gridlayout.GridViewActivity" />
-        <activity android:name=".webview.WebViewActivity"></activity>
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".progress.ProgressActivity"></activity>
     </application>
 
 </manifest>
