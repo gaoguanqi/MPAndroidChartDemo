@@ -25,7 +25,8 @@
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".progress.ProgressActivity" />
         <activity android:name=".nbbutton.MyFirstActivity" />
-        <activity android:name=".nbbutton.MyScondActivity"></activity>
+        <activity android:name=".nbbutton.MyScondActivity" />
+        <activity android:name=".viewapge.PageActivity"></activity>
     </application>
 
 </manifest>
