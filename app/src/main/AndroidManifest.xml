@@ -19,14 +19,24 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".linechart.LineChartActivity" />
+        <activity android:name=".linechart.MyLineChartActivity" />
+        <activity android:name=".markerchart.MarkerChartActivity"/>
         <activity android:name=".savestate.SaveSateActivity" />
         <activity android:name=".gridlayout.GridViewActivity" />
         <activity android:name=".webview.WebViewActivity" />
         <activity android:name=".progress.ProgressActivity" />
         <activity android:name=".nbbutton.MyFirstActivity" />
         <activity android:name=".nbbutton.MyScondActivity" />
-        <activity android:name=".viewapge.PageActivity"></activity>
+        <activity android:name=".viewapge.PageActivity" />
+
+
+        <activity android:name=".markerchart.activity.CombinedChartActivity"/>
+        <activity android:name=".markerchart.activity.LineChartActivity"/>
+        <activity android:name=".markerchart.activity.DynamicLineChartActivity"/>
+        <activity android:name=".markerchart.activity.BarChartActivity"/>
+        <activity android:name=".markerchart.activity.RadarChartActivity"/>
+        <activity android:name=".markerchart.activity.PieChartActivity"/>
+        <activity android:name=".markerchart.activity.MeterActivity"/>
     </application>
 
 </manifest>

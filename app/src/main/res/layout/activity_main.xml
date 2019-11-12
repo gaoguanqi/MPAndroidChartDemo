@@ -17,6 +17,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="折线图" />
+
+        <Button
+            android:id="@+id/btn_markerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="MPAndroidChart 之自定义MarkerView" />
         <Button
             android:id="@+id/btn_savestate"
             android:layout_width="match_parent"

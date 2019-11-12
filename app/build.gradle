@@ -50,9 +50,12 @@ dependencies {
     implementation rootProject.ext.dependencies["rxjava2"]
 
     implementation rootProject.ext.dependencies["rxbinding"]
+    implementation rootProject.ext.dependencies["gson"]
 
     //dagger2
     implementation rootProject.ext.dependencies["dagger2"]
     annotationProcessor rootProject.ext.dependencies["dagger2-compiler"]
+
+
 
 }

@@ -25,7 +25,7 @@ import butterknife.BindView;
  * @Description: 功能描述
  * https://blog.csdn.net/qq_26787115/article/details/53185657
  */
-public class LineChartActivity extends BaseActivity {
+public class MyLineChartActivity extends BaseActivity {
     @BindView(R.id.lineChart)
     MyLineChart mChart;
     private LineData data;
@@ -33,7 +33,7 @@ public class LineChartActivity extends BaseActivity {
 
     @Override
     protected int setLayoutId() {
-        return R.layout.activity_line_chart;
+        return R.layout.activity_my_line_chart;
     }
 
 
